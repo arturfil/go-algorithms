@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
+	"time"
 )
 
 type Problem struct {
@@ -18,6 +20,8 @@ type Problems struct {
 
 func ReadJson() {
     var problems Problems
+    var notDone []Problem
+
     file, err := os.Open("data.json")
     if err != nil { fmt.Println(err) }
 
@@ -26,9 +30,11 @@ func ReadJson() {
     
     for i := 0; i < len(problems.Problems); i++ {
         if (problems.Problems[i].Done == false) {
-            fmt.Println("Problem title ", problems.Problems[i])
+            notDone = append(notDone, problems.Problems[i])
         }
     }
-
-    defer file.Close()
+    rand.Seed(time.Now().UnixNano()) 
+    randIdx := rand.Intn(len(notDone) - 0 + 1) + 0
+    
+    fmt.Println("Problem chosen --->", notDone[randIdx].Title)
 }
