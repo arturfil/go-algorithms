@@ -18,7 +18,7 @@ type Problems struct {
     Problems []Problem `json:"problems"`
 }
 
-func ReadJson() {
+func RandomProblem() {
     var problems Problems
     var notDone []Problem
 

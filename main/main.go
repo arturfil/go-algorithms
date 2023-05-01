@@ -1,11 +1,13 @@
 package main
 
 import (
-	"leetcode/helpers"
+	// "leetcode/helpers"
+	"leetcode/strings"
 )
 
 func main() {
-    // test := []int{1,2,3,4,5}
-    // println(arrays.TwoSum(test, 9))
-    helpers.ReadJson()
+    // helpers.RandomProblem()
+    // words := []string {"one", "two", "noe", "tow"}
+    // strings.GroupAnagrams(words)
+    strings.IsAnagram("racecar", "cracera")
 }
