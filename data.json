@@ -52,7 +52,7 @@
         {"done": false, "title": "Flood Fill"},
         {"done": false, "title": "Diameter of Binary Tree"},
         {"done": false, "title": "Cut Off Trees for Golf Event"},
-        {"done": false, "title": "Longest Consecutive Sequence"},
+        {"done": true, "title": "Longest Consecutive Sequence"},
         {"done": false, "title": "Alien Dictionary (Leetcode Premium)"},
         {"done": false, "title": "Graph Valid Tree (Leetcode Premium)"},
         {"done": false, "title": "Number of Connected Components in an Undirected Graph (Leetcode Premium)"},
