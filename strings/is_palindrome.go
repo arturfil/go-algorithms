@@ -1,11 +1,20 @@
 package strings
 
-import "fmt"
+import (
+	"regexp"
+	"strings"
+)
 
 func IsPalindrome(s string) bool {
-	fmt.Println("test")
-	for i := 0; i < len(s); i++ {
-		fmt.Printf("%c ,", s[i])
-	}
-	return false
+    re := regexp.MustCompile("[^a-zA-Z0-9]+")
+    s = strings.ToLower(re.ReplaceAllString(s, ""))
+    
+    left, right := 0, len(s)-1
+    for left < right {
+        if s[left] != s[right] { return false }
+        left++ 
+        right--
+    }
+    
+	return true 
 }
