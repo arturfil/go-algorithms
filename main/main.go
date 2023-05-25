@@ -1,7 +1,10 @@
 package main
 
-import "leetcode/helpers"
+import (
+	"leetcode/arrays"
+)
 
 func main() {
-    helpers.RandomProblem()
+    nums := []int {100, 4, 200, 1, 3, 2}
+    arrays.LongestConsecutive(nums) 
 }
