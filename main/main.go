@@ -1,11 +1,13 @@
 package main
 
 import (
-	"leetcode/helpers"
+	binary_search "leetcode/binarry_search"
 )
 
 func main() {
-    // nums := []int {100, 4, 200, 1, 3, 2}
+    // nums := []int {4,5,6,7,0,1}
+    nums := []int {3,1,2}
     // arrays.LongestConsecutive(nums) 
-    helpers.RandomProblem()
+    // helpers.RandomProblem()
+    binary_search.FindMin(nums)
 }
