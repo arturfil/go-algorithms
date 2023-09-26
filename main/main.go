@@ -6,5 +6,5 @@ import (
 
 
 func main() {
-    helpers.RandomProblem() 
+    helpers.RandomProblem()
 }
