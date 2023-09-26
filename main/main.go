@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"leetcode/arrays"
+	"leetcode/helpers"
 )
 
+
 func main() {
-  fmt.Println(arrays.ProductsExceptSelf([]int{1,2,3,4}) )
+    helpers.RandomProblem() 
 }
