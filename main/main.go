@@ -1,10 +1,12 @@
 package main
 
 import (
-	"leetcode/helpers"
+	"fmt"
+	twopointers "leetcode/two_pointers"
 )
 
 
 func main() {
-    helpers.RandomProblem() 
+    // helpers.RandomProblem()
+    fmt.Println(twopointers.MaxArea([]int {4,5,6,1,5,6,7}))
 }
