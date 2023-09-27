@@ -2,7 +2,6 @@ package search
 
 import (
 	"fmt"
-	"math"
 	"sort"
 )
 
@@ -13,6 +12,7 @@ type Value struct {
 
 func KClosest(points [][]int, k int) [][]int {
     distance, res := []Value{}, [][]int{}
+
     for _, point := range points {
         dist := (point[0] * point[0]) + (point[1] * point[1])
         fmt.Println(dist)
