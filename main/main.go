@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	twopointers "leetcode/two_pointers"
+	"leetcode/search"
 )
 
 
 func main() {
     // helpers.RandomProblem()
-    fmt.Println(twopointers.MaxArea([]int {4,5,6,1,5,6,7}))
+    fmt.Println(search.KClosest([][]int{{1,2}, {-1,2}, {3,5}, {3,6}, {2, 4}}, 2))
 }
