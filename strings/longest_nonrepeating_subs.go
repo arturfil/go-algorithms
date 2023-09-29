@@ -8,7 +8,6 @@ func lengthOfLongestSubstring(s string) int {
         if _, ok := seen[ch]; ok && seen[ch] >= start { // as it has not been seen
             start = seen[ch] + 1
         }
-
         longest = max(i - start + 1, longest)
         seen[ch] = i
     }
