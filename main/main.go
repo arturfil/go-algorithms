@@ -1,11 +1,12 @@
 package main
 
 import (
-	"leetcode/helpers"
+	"fmt"
+	"leetcode/arrays"
 )
 
 
 func main() {
-    helpers.RandomProblem()
-    // fmt.Println(search.KClosest([][]int{{1,2}, {-1,2}, {3,5}, {3,6}, {2, 4}}, 2))
+    // helpers.RandomProblem()
+    fmt.Println(arrays.FirstUniqueChar("lleettcode")) // should return c
 }
