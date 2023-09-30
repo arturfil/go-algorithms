@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"leetcode/arrays"
+	"leetcode/helpers"
 )
 
 
 func main() {
-    // helpers.RandomProblem()
-    fmt.Println(arrays.FirstUniqueChar("lleettcode")) // should return c
+    helpers.RandomProblem()
+    // fmt.Println(arrays.FirstUniqChar("lleettcode")) // should return c
 }
