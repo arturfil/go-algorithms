@@ -1,11 +1,15 @@
 package main
 
 import (
-	"leetcode/helpers"
+	"fmt"
+	"leetcode/intervals"
 )
 
-
 func main() {
-    helpers.RandomProblem()
-    // fmt.Println(arrays.FirstUniqChar("lleettcode")) // should return c
+    // helpers.PrintDoneProblems()
+    inters := [][]int {
+        {1,3},{2,4},{5,8},{9,10},{10,11},
+    }
+
+    fmt.Println(intervals.Merge(inters))
 }
