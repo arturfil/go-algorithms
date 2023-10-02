@@ -8,7 +8,7 @@ import (
 func main() {
     // helpers.PrintDoneProblems()
     inters := [][]int {
-        {1,3},{2,4},{5,8},{9,10},{10,11},
+        {1,3},{2,6},{8,10},{15,18},
     }
 
     fmt.Println(intervals.Merge(inters))
