@@ -57,7 +57,7 @@
         {"done": false, "title": "Graph Valid Tree (Leetcode Premium)"},
         {"done": false, "title": "Number of Connected Components in an Undirected Graph (Leetcode Premium)"},
         {"done": false, "title": "Insert Interval"},
-        {"done": false, "title": "Merge Intervals"},
+        {"done": true, "title": "Merge Intervals"},
         {"done": false, "title": "Non-overlapping Intervals"},
         {"done": false, "title": "Meeting Rooms (Leetcode Premium)"},
         {"done": false, "title": "Meeting Rooms II (Leetcode Premium)"},

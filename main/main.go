@@ -2,14 +2,11 @@ package main
 
 import (
 	"fmt"
-	"leetcode/intervals"
+	"leetcode/arrays"
 )
 
 func main() {
-    // helpers.PrintDoneProblems()
-    inters := [][]int {
-        {1,3},{2,6},{8,10},{15,18},
-    }
-
-    fmt.Println(intervals.Merge(inters))
+    // helpers.RandomProblem()
+    nums := []int {2,7,9,3,1}
+    fmt.Println(arrays.Rob(nums))
 }
