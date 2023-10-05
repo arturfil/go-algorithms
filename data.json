@@ -61,7 +61,7 @@
         {"done": false, "title": "Non-overlapping Intervals"},
         {"done": false, "title": "Meeting Rooms (Leetcode Premium)"},
         {"done": false, "title": "Meeting Rooms II (Leetcode Premium)"},
-        {"done": false, "title": "Reverse a Linked List"},
+        {"done": true, "title": "Reverse a Linked List"},
         {"done": true, "title": "Detect Cycle in a Linked List"},
         {"done": false, "title": "Add Two Numbers"},
         {"done": false, "title": "Reverse Nodes in k-Group"},
