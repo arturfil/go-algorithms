@@ -50,7 +50,7 @@
         {"done": false, "title": "Word Ladder"},
         {"done": false, "title": "Snakes and Ladders"},
         {"done": false, "title": "Flood Fill"},
-        {"done": false, "title": "Diameter of Binary Tree"},
+        {"done": true, "title": "Diameter of Binary Tree"},
         {"done": false, "title": "Cut Off Trees for Golf Event"},
         {"done": true, "title": "Longest Consecutive Sequence"},
         {"done": false, "title": "Alien Dictionary (Leetcode Premium)"},
