@@ -14,7 +14,7 @@
         {"done": false, "title": "Trapping Rain Water"},
         {"done": true, "title": "Two Sum"},
         {"done": false, "title": "Best Time to Buy and Sell Stock"},
-        {"done": false, "title": "Contains Duplicate"},
+        {"done": true, "title": "Contains Duplicate"},
         {"done": true, "title": "Product of Array Except Self"},
         {"done": true, "title": "Maximum Subarray"},
         {"done": true, "title": "Maximum Product Subarray"},

@@ -6,6 +6,7 @@ type StackNode struct {
     next *StackNode
 }
 
+
 func NewStackNode(val, min int, next *StackNode) *StackNode {
     return &StackNode{
        val,
