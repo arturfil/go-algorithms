@@ -1,8 +1,12 @@
 package main
 
-import "leetcode/helpers"
+import (
+	"fmt"
+	"leetcode/strings"
+)
 
 
 func main() {
-    helpers.RandomProblem()
+    // helpers.RandomProblem()
+    fmt.Print(strings.IsValid("[](){}"))
 }
