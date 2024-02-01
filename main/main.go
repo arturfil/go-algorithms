@@ -1,11 +1,12 @@
 package main
 
 import (
-	"fmt"
-	"leetcode/strings"
+	"leetcode/helpers"
 )
 
 func main() {
-    res := strings.CountSubstrings("abbba")
-    fmt.Println("res", res)
+    //res := strings.CountSubstrings("abbba")
+    //fmt.Println("res", res)
+
+    helpers.ChooseRandomProblem()
 }

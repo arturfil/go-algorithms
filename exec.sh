@@ -1,1 +1,1 @@
-go run ./main/main.go
+go build -o leet ./main/main.go
