@@ -26,8 +26,6 @@ func ChooseRandomProblem() {
 	// parse values from flags
 	flag.Parse()
 
-	fmt.Println("listPtr", *listPtr)
-
 	var notDone []Problem
 	problems := GetProblemsFromJsonData()
 
