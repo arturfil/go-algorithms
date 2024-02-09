@@ -11,10 +11,11 @@ import (
 )
 
 type Problem struct {
-	Done     bool   `json:"done"`
-	Title    string `json:"title"`
-	IsFrom75 bool   `json:"isFrom75"`
-	Category string `json:"category"`
+	Done      bool   `json:"done"`
+	Title     string `json:"title"`
+	IsFrom75  bool   `json:"isFrom75"`
+	Algorithm string `json:"algorithm"`
+	Category  string `json:"category"`
 }
 
 // RandomProblem - gets the data from GetProblemsFromJsonData & from there,
@@ -30,7 +31,9 @@ func ChooseRandomProblem() {
 	problems := GetProblemsFromJsonData()
 
 	for i := 0; i < len(problems); i++ {
-		if problems[i].Done != false { continue }
+		if problems[i].Done != false {
+			continue
+		}
 
 		if *ctgyPtr != "all" || *listPtr {
 

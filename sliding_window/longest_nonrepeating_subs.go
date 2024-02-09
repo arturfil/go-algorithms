@@ -1,4 +1,4 @@
-package strings
+package slidingwindow 
 
 func lengthOfLongestSubstring(s string) int {
     longest, start := 0, 0
@@ -14,4 +14,12 @@ func lengthOfLongestSubstring(s string) int {
     return longest
 }
 
-
+func max(values ...int) int {
+    maxVal := values[0]
+    for _, val := range values {
+        if val > maxVal {
+            maxVal = val
+        }
+    }
+    return maxVal
+}
