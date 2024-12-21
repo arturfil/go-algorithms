@@ -40,7 +40,7 @@ func CanFinishBFS(numCourses int, prerequisites [][]int) bool {
     degree := make([]int, numCourses)
 
     for _, prereq := range prerequisites {
-        graph[prereq[1]] = append(graph[prereq[1]], prereq[0])
+        graph[prereq[0]] = append(graph[prereq[1]], prereq[0])
         degree[prereq[0]] += 1
     }
 

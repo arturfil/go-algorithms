@@ -1,17 +1,15 @@
 package arrays
 
 func TwoSum(nums []int, target int) []int {
+	numsMap := map[int]int{}
 
-	res := []int{0, 0}
-	m := map[int]int{}
-
-	for i := 0; i < len(nums); i++ {
-		if _, ok := m[target-nums[i]]; ok {
-			res = []int{m[target-nums[i]], i}
-			return res
+	for i, num := range nums {
+		if _, exists := numsMap[num]; exists {
+			return []int{numsMap[num], i}
 		} else {
-			m[nums[i]] = i
+			numsMap[target-num] = i
 		}
 	}
-	return res
+
+	return []int{0, 0}
 }

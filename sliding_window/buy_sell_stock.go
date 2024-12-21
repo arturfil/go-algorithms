@@ -1,5 +1,7 @@
 package slidingwindow
 
+import "math"
+
 func MaxProfit(prices []int) int {
     l, r, profit := 0, 1, 0
     
@@ -15,6 +17,19 @@ func MaxProfit(prices []int) int {
         r++
     }
     return profit
+}
+
+func maxProfit(prices []int) int {
+    min, max := math.MaxInt, 0
+    for _, price := range prices {
+        if price < min {
+            min = price
+        } else {
+            max = Max(max, price - min)
+        }
+    }
+
+    return max
 }
 
 

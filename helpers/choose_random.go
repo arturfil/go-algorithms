@@ -54,6 +54,8 @@ func ChooseRandomProblem() {
 
 	fmt.Println("notDone slice length:", len(notDone))
 
+	// PrintDoneProblems()
+
 	rand.NewSource(time.Now().UnixNano())
 	randIdx := rand.Intn(len(notDone))
 
