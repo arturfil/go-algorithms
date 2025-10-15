@@ -18,11 +18,26 @@ type Problem struct {
 	Category  string `json:"category"`
 }
 
-// RandomProblem - gets the data from GetProblemsFromJsonData & from there,
-// it choosees a random problem to solve in leetcode
+// shouldIncludeProblem checks if a problem matches the filter criteria
+func shouldIncludeProblem(p Problem, category string, from75Only bool) bool {
+	// Filter by category if specified
+	if category != "all" && p.Category != category {
+		return false
+	}
+
+	// Filter by isFrom75 if flag is set
+	if from75Only && !p.IsFrom75 {
+		return false
+	}
+
+	return true
+}
+
+// ChooseRandomProblem - gets the data from GetProblemsFromJsonData & from there,
+// it chooses a random problem to solve in leetcode
 func ChooseRandomProblem() {
-	listPtr := flag.Bool("exclude", false, "flag to filter problems by")
-	ctgyPtr := flag.String("category", "all", "flag to filter by category")
+	from75Ptr := flag.Bool("from75", false, "filter only problems from the Blind 75 list")
+	ctgyPtr := flag.String("category", "all", "filter by category (e.g., arrays, strings, graphs)")
 
 	// parse values from flags
 	flag.Parse()
@@ -30,50 +45,57 @@ func ChooseRandomProblem() {
 	var notDone []Problem
 	problems := GetProblemsFromJsonData()
 
-	for i := 0; i < len(problems); i++ {
-		if problems[i].Done != false {
+	// Apply filters
+	for _, problem := range problems {
+		// Skip completed problems
+		if problem.Done {
 			continue
 		}
 
-		if *ctgyPtr != "all" || *listPtr {
-
-			if *ctgyPtr != "all" && problems[i].Category == *ctgyPtr && !*listPtr {
-				notDone = append(notDone, problems[i])
-
-			} else if *listPtr && problems[i].IsFrom75 == *listPtr && *ctgyPtr == "all" {
-				notDone = append(notDone, problems[i])
-
-			} else if problems[i].Category == *ctgyPtr && problems[i].IsFrom75 == *listPtr {
-				notDone = append(notDone, problems[i])
-			}
-
-		} else {
-			notDone = append(notDone, problems[i])
+		// Apply category and from75 filters
+		if shouldIncludeProblem(problem, *ctgyPtr, *from75Ptr) {
+			notDone = append(notDone, problem)
 		}
 	}
 
 	fmt.Println("notDone slice length:", len(notDone))
 
+	// Handle case when no problems match the filters
+	if len(notDone) == 0 {
+		fmt.Println("No problems found matching the specified filters")
+		return
+	}
+
 	// PrintDoneProblems()
 
-	rand.NewSource(time.Now().UnixNano())
-	randIdx := rand.Intn(len(notDone))
+	// Properly seed the random number generator
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	randIdx := r.Intn(len(notDone))
 
 	fmt.Println("Problem chosen --->", notDone[randIdx].Title)
 }
 
 // GetProblemsFromJsonData - gets the data from a json file and returns it into a slice
 func GetProblemsFromJsonData() []Problem {
-
 	problems := struct{ Problems []Problem }{}
 
 	file, err := os.Open("data.json")
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Error opening data.json:", err)
+		return []Problem{}
+	}
+	defer file.Close()
+
+	byteVal, err := io.ReadAll(file)
+	if err != nil {
+		fmt.Println("Error reading data.json:", err)
+		return []Problem{}
 	}
 
-	byteVal, _ := io.ReadAll(file)
-	json.Unmarshal(byteVal, &problems)
+	if err := json.Unmarshal(byteVal, &problems); err != nil {
+		fmt.Println("Error parsing JSON:", err)
+		return []Problem{}
+	}
 
 	return problems.Problems
 }

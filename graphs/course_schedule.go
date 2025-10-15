@@ -2,36 +2,35 @@ package graphs
 
 // DFS solution
 func CanFinish(numCourses int, prerequisites [][]int) bool {
+	// dependency table
     table := map[int][]int{}
-    for _, req := range prerequisites {
-        table[req[0]] = append(table[req[0]], req[1])
-    }
-    visited := map[int]struct{}{}
+	current := map[int]bool{} // hash_set
+	seen := map[int]bool{} // valid_checked
+	for _, prereq := range prerequisites {
+		// you are adding an array to the arry in the k, v on the map
+		table[prereq[0]] = append(table[prereq[0]], prereq[1])
+	}
 
-    for i := 0; i < numCourses; i++ {
-        if !checkPrereqs(i, visited, table) {
-            return false
-        }
-    }
-    return true
-}
+	var hashCycle func(int) bool
+	hashCycle = func(course int) bool { // return true => has cycle
+		if current[course] { return true }
+		if seen[course] { return false }
+		current[course] = true
 
-func checkPrereqs(course int, visited map[int]struct{}, table map[int][]int) bool {
-    if len(table[course]) == 0 {
-        return true
-    }
-    if _, yes := visited[course]; yes {
-        return false
-    }
-    visited[course] = struct{}{}
-    for _, p := range table[course] {
-        if !checkPrereqs(p, visited, table) {
-            return false
-        }
-    }
-    delete(visited, course)
-    table[course] = nil
-    return true
+		for _, dep := range table[course] {
+			if hashCycle(dep) { return true }
+		}
+
+		delete(current, course)
+		seen[course] = true
+		return false
+	}
+
+	for i := 0; i < numCourses; i++ {
+		if hashCycle(i) { return false }
+	}
+
+	return true
 }
 
 // BFS Solution
@@ -61,6 +60,5 @@ func CanFinishBFS(numCourses int, prerequisites [][]int) bool {
         }
     }
 
-    if len(bfs) == numCourses { return true }
-    return false
+    return len(bfs) == numCourses
 }

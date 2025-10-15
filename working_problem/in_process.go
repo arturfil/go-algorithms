@@ -1,24 +1,22 @@
 package workingproblem
 
-func isValid(s string) bool {
-	bMap := map[string]string{
-		{"(", ")"},
-		{"[", "]"},
-		{"{", "}"},
-	}
-	stck := []ch{}
+import "fmt"
 
-	for _, ch := range s {
-		if ch == stck[len(stck)-1] {
-            stck = stck[:len(stck)-1]
-		} else {
-            stck = append(stck, map[ch])
-		}
-	}
+func ProductExceptSelf(nums []int) []int {
+    res := make([]int, len(nums))
 
-	if len(stck) == 0 {
-		return true
-	} else {
-		return false
-	}
+    prev := 1 
+    for i, num := range nums {
+        res[i] = prev
+        prev *= num
+    }
+    
+    prev = 1 
+    for i := len(nums)-1; i >= 0; i-- {
+        res[i] *= prev
+        prev *= nums[i]
+    }
+
+    fmt.Println("res->", res)
+	return res
 }

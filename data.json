@@ -43,7 +43,7 @@
         {"isFrom75": true,  "algorithm": "", "category": "graphs",                   "done": false, "title": "Letter Combinations of a Phone Number"},
         {"isFrom75": true,  "algorithm": "", "category": "graphs",                   "done": false, "title": "Generate Parentheses"},
         {"isFrom75": false, "algorithm": "", "category": "graphs",                   "done": false, "title": "Median of Two Sorted Arrays"},
-        {"isFrom75": true,  "algorithm": "", "category": "graphs",                   "done": false, "title": "Course Schedule"},
+        {"isFrom75": true,  "algorithm": "", "category": "graphs",                   "done": true, "title": "Course Schedule"},
         {"isFrom75": false, "algorithm": "", "category": "graphs",                   "done": false, "title": "Pacific Atlantic Water Flow"},
         {"isFrom75": true,  "algorithm": "", "category": "graphs",                   "done": false, "title": "Number of Islands"},
         {"isFrom75": false, "algorithm": "", "category": "graphs",                   "done": false, "title": "Word Ladder II"},

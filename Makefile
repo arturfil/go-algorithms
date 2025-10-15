@@ -1,10 +1,10 @@
 
 category=all
-exclude=false
+from75=false
 
 
-build: 
+build:
 	go build -o exec ./main/main.go
 
 run:
-	./exec -category=$(category) -exclude=$(exclude)
+	./exec -category=$(category) -from75=$(from75)
