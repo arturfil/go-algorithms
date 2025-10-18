@@ -16,7 +16,7 @@
         {"isFrom75": true,  "algorithm": "sliding window", "category": "arrays",     "done": false, "title": "Best Time to Buy and Sell Stock"},
         {"isFrom75": true,  "algorithm": "hashmap", "category": "arrays",            "done": false, "title": "Contains Duplicate"},
         {"isFrom75": true,  "algorithm": "arrays", "category": "arrays",             "done": false, "title": "Product of Array Except Self"},
-        {"isFrom75": true,  "algorithm": "", "category": "arrays",                   "done": false, "title": "Maximum Subarray"},
+        {"isFrom75": true,  "algorithm": "", "category": "arrays",                   "done": true, "title": "Maximum Subarray"},
         {"isFrom75": true,  "algorithm": "", "category": "arrays",                   "done": false, "title": "Maximum Product Subarray"},
         {"isFrom75": true,  "algorithm": "", "category": "arrays",                   "done": false, "title": "Find Minimum in Rotated Sorted Array"},
         {"isFrom75": true,  "algorithm": "", "category": "arrays",                   "done": false, "title": "Search in Rotated Sorted Array"},
