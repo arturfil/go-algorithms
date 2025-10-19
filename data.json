@@ -95,7 +95,7 @@
         {"isFrom75": true,  "algorithm": "", "category": "binary-tree",              "done": false, "title": "Serialize and Deserialize Binary Tree"},
         {"isFrom75": true,  "algorithm": "", "category": "binary-tree",              "done": false, "title": "Subtree of Another Tree"},
         {"isFrom75": true,  "algorithm": "", "category": "binary-tree",              "done": false, "title": "Construct Binary Tree from Preorder and Inorder Traversal"},
-        {"isFrom75": true,  "algorithm": "", "category": "binary-tree",              "done": false, "title": "Validate Binary Search Tree"},
+        {"isFrom75": true,  "algorithm": "", "category": "binary-tree",              "done": true, "title": "Validate Binary Search Tree"},
         {"isFrom75": true,  "algorithm": "", "category": "binary-tree",              "done": false, "title": "Kth Smallest Element in a BST"},
         {"isFrom75": true,  "algorithm": "", "category": "binary-tree",              "done": false, "title": "Lowest Common Ancestor of BST"},
         {"isFrom75": true,  "algorithm": "", "category": "binary-tree",              "done": false, "title": "Implement Trie (Prefix Tree)"},
