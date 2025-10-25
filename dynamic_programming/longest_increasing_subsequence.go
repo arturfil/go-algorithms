@@ -35,3 +35,26 @@ func LengthOfLISAlt(nums []int) int {
     }
     return len(dp)
 }
+
+func lenghtOfLIS(nums []int) int {
+	dp := make([]int, len(nums))
+	for i := range dp { dp[i] = 1 }
+
+	for i := range nums {
+		for j := range nums {
+			if nums[i] > nums[j] {
+				dp[i] = Max(dp[i], dp[j]+1)
+			}	
+		}
+	}
+
+	return Max(dp...)
+}
+
+func Max(nums ...int) int {
+	max := 0
+	for _, num := range nums {
+		if num > max { max = num }
+	}
+	return max
+}
