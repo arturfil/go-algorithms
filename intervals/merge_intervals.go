@@ -8,12 +8,12 @@ func Merge(intervals [][]int) [][]int {
     })
     res := [][]int {intervals[0]}
 
-    for _, interval := range intervals {
-        last := len(res)-1 
-        if interval[0] > res[last][1] {
-            res = append(res, interval)
+	for _, interval := range intervals[1:] {
+        last := res[len(res)-1]
+        if interval[0] <= last[1] {
+            last[1] = max(interval[1], last[1])
         } else  {
-            res[last][1] = max(interval[1], res[last][1])
+            res = append(res, interval)
         }
     }
 

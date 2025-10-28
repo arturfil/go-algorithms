@@ -1,22 +1,27 @@
 package workingproblem
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
-func ProductExceptSelf(nums []int) []int {
-    res := make([]int, len(nums))
+func Merge(intervals [][]int) [][]int {
+	sort.Slice(intervals, func(a, b int) bool {
+		return intervals[a][0] < intervals[b][0]
+	})
+	res := [][]int{intervals[0]}
 
-    prev := 1 
-    for i, num := range nums {
-        res[i] = prev
-        prev *= num
-    }
-    
-    prev = 1 
-    for i := len(nums)-1; i >= 0; i-- {
-        res[i] *= prev
-        prev *= nums[i]
-    }
+	for _, inter := range intervals[1:] {
+		last := res[len(res)-1]
+		if inter[0] <= last[1] {
+			maxV := max(inter[1], last[1])
+			fmt.Println("maxV", maxV)
+			last[1] = maxV
+		} else {
+			res = append(res, inter)
+		}
+	}
 
-    fmt.Println("res->", res)
+	fmt.Println("res ->", res)
 	return res
 }
